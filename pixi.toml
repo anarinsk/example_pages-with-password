@@ -1,0 +1,18 @@
+[project]
+name = "example_pages-with-password"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["JS HUHH <anarinsk@gmail.com>"]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+
+[dependencies]
+matplotlib = ">=3.8.3,<3.9"
+pandas = ">=2.2.1,<2.3"
+python = "3.11.*"
+jupyter = ">=1.0.0,<1.1"
+
+[pypi-dependencies]
+koreanize-matplotlib = "*"

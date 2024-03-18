@@ -1,0 +1,42 @@
+---
+title: "Example of Encrypted Dashboard with Github Actions"
+date: today
+date-format: "medium"
+format: 
+  dashboard:
+    scrolling: true 
+    orientation: rows
+#logo: images/logo.png
+theme: custom.scss
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import koreanize_matplotlib
+
+# 임의의 데이터 생성
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+```
+
+# Page 1 
+
+## 이 페이지가 보이십니까? 
+
+- 잘 보인다면 암호가 잘 풀린 것입니다. 
+
+# Page 2
+
+```{python}
+# 그래프 그리기
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, marker='o')
+plt.title('임의의 데이터로 그린 그래프')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.grid(True)
+plt.show();
+```

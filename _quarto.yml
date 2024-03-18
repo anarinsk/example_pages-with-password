@@ -1,0 +1,14 @@
+project:
+  type: website
+  render: 
+    - billboard.qmd
+  #output-dir: _output
+
+#toc: true
+#number-sections: true
+#bibliography: references.bib  
+  
+format:
+  html:
+    css: custom.css
+    html-math-method: katex

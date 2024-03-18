@@ -1,0 +1,43 @@
+on:
+  workflow_run:
+    workflows: ["Quarto"]
+    types: [completed]
+
+name: Staticrypt
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+    
+      - name: Install staticrypt
+        uses: actions/setup-node@v4
+      - run: sudo npm install -g staticrypt   
+      
+      - name: Encrypt        
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - run: staticrypt billboard.html --password 0000 --short -d .
+      
+      - name: Commit files
+        run: |
+          git config --replace-all user.email "anarinsk@gmail.com"
+          git config --replace-all user.name "anarinsk@gmail.com"  
+          git add .
+          git commit -m "encrypted files"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true
+        
+
+
+
