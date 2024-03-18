@@ -26,11 +26,16 @@ y = np.sin(x)
 
 ## 이 페이지가 보이십니까? 
 
-- 잘 보인다면 암호가 잘 풀린 것입니다. 
+- "Page 1"이 잘 보인다면 암호가 잘 풀린 것입니다! 
+- 대시보드 빌드는 아래의 링크를 참고하세요. 
+- "Page 2"는 코드 실행을 예시합니다. 
+
+<https://quarto.org/docs/dashboards>
 
 # Page 2
 
 ```{python}
+#| echo: true
 # 그래프 그리기
 plt.figure(figsize=(10, 6))
 plt.plot(x, y, marker='o')
